@@ -20,6 +20,8 @@ private static readonly Dictionary<string, string> quotes = new Dictionary<strin
 };
 private static Random random = new Random();
 
+private static readonly Guid ServerId = Guid.NewGuid();
+
 static void Main(string[] arg)
 {
     TcpListener? server = null;
@@ -31,7 +33,7 @@ try
         server = new TcpListener(localAddr, port);
 
         server.Start();
-        Console.WriteLine("Quote Server running on port " +port);
+        Console.WriteLine($"Quote Server {ServerId} running on port " +port);
         Console.WriteLine("Press Ctrl-C to stop server");
 
         while(true) {
@@ -43,7 +45,7 @@ try
 
             var quoteList = new List<KeyValuePair<string, string>>(quotes);
             var randomQuote = quoteList[random.Next(quoteList.Count)];
-            string responseMsg = $"\"{randomQuote.Key}\" - {randomQuote.Value}\n";
+            string responseMsg = $"[{ServerId}]\"{randomQuote.Key}\" - {randomQuote.Value}\n";
             byte[] msg = Encoding.ASCII.GetBytes(responseMsg);
             stream.Write(msg, 0, msg.Length);
             Console.WriteLine($"Sent: {responseMsg}");

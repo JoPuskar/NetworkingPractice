@@ -1,0 +1,55 @@
+
+services:
+  quote-server-1:
+    build: 
+      context: ./quote-server
+      dockerfile: Dockerfile
+    ports:
+      - "13001:13000"
+    networks:
+      - app-net
+
+  quote-server-2:
+    build: 
+      context: ./quote-server
+      dockerfile: Dockerfile
+    ports:
+      - "13002:13000"
+    networks:
+      - app-net
+
+  quote-server-3:
+    build: 
+      context: ./quote-server
+      dockerfile: Dockerfile
+    ports:
+      - "13003:13000"
+    networks:
+      - app-net
+
+  haproxy: 
+    image: haproxy:latest
+    volumes:
+      - ./haproxy.config:/usr/local/etc/haproxy/haproxy.cfg:ro
+    ports:
+      - "13000:13000"
+
+    depends_on:
+      - quote-server-1
+      - quote-server-2
+      - quote-server-3
+    networks:
+      - app-net
+
+  quote-client:
+    build:
+      context: ./quote-client
+      dockerfile: Dockerfile
+    depends_on:
+      - haproxy
+    networks:
+      - app-net
+
+networks:
+    app-net:
+      driver: bridge

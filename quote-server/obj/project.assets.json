@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\JOSHIP1\\OneDrive - East Tennessee State University\\Documents\\Spring25\\Software Production\\quote-server\\quote-server.csproj",
+      "projectUniqueName": "C:\\Users\\JOSHIP1\\OneDrive - East Tennessee State University\\Documents\\Spring25\\Software Production\\NetworkingPractice\\quote-server\\quote-server.csproj",
       "projectName": "quote-server",
-      "projectPath": "C:\\Users\\JOSHIP1\\OneDrive - East Tennessee State University\\Documents\\Spring25\\Software Production\\quote-server\\quote-server.csproj",
+      "projectPath": "C:\\Users\\JOSHIP1\\OneDrive - East Tennessee State University\\Documents\\Spring25\\Software Production\\NetworkingPractice\\quote-server\\quote-server.csproj",
       "packagesPath": "C:\\Users\\JOSHIP1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\JOSHIP1\\OneDrive - East Tennessee State University\\Documents\\Spring25\\Software Production\\quote-server\\obj\\",
+      "outputPath": "C:\\Users\\JOSHIP1\\OneDrive - East Tennessee State University\\Documents\\Spring25\\Software Production\\NetworkingPractice\\quote-server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
